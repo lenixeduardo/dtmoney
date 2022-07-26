@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 //Diminuimos as fontes baseado no tamanho do dispositivo do usuario.
 //font-size padrão para desktop : 16px
 html {
-@media (max-width:1080px){
+@media (max-width: 2000px){
     font-size: 93.75%; // 15 px
 }
 
@@ -47,7 +47,7 @@ body {
 
 }
 // Aqui definimos onde utilizaremos a fonte que importamos, que é a Poppins.
-body, input, textarea , strong button {
+body, input, textarea , strong, button {
 font-family: 'Poppins', sans-serif;
 font-weight: 400;
 }
@@ -64,5 +64,41 @@ button {
 [disabled] {
 opacity: 0.6;
 cursor: not-allowed;
+}
+
+.react-modal-overlay {
+
+background: rgba(0,0,0,0.5);
+
+position: fixed;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.react-modal-content {
+
+    width: 100%;
+    max-width: 576px;
+    background: var(--background);
+    padding: 3rem;
+    position: relative;
+    border-radius: 0.24rem;
+}
+
+.react-modal-close{
+    position: absolute;
+    right:  1.5rem;
+    top: 1.5rem;
+    border: 0;
+    background: transparent;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
 }
 `;
